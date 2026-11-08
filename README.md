@@ -43,6 +43,12 @@ send a JSON `POST` to `http://localhost:5000/api/users/add` with `name`, `email`
 The full Lab 5 API is also available through the Postman collection
 `Flask_user_app.postman_collection.json`.
 
+## Submission evidence
+
+`Lab8-Activity1-Commands.docx` contains the Activity 1 command explanations and
+screenshots, along with the Docker Desktop screenshots for both required image
+tags. The original screenshots are also available in `screenshots/`.
+
 ## Build images separately
 
 ```powershell
