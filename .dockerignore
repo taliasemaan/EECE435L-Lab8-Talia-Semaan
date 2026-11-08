@@ -1,0 +1,11 @@
+.git
+.pytest_cache
+__pycache__
+*.py[cod]
+venv
+.venv
+database.db
+*.sqlite
+*.sqlite3
+test_*.py
+Flask_user_app.postman_collection.json

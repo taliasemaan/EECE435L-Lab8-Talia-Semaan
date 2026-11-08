@@ -1,0 +1,48 @@
+services:
+  db-init:
+    image: tts09/lab8-talia_semaan:0.0.1-RELEASE
+    build:
+      context: .
+      dockerfile: Dockerfile.lab5
+    command:
+      - python
+      - -c
+      - from database import create_db_table; create_db_table()
+    environment:
+      DATABASE_PATH: /data/database.db
+    volumes:
+      - lab8-db-data:/data
+    restart: "no"
+
+  lab5-api:
+    image: tts09/lab8-talia_semaan:0.0.1-RELEASE
+    build:
+      context: .
+      dockerfile: Dockerfile.lab5
+    environment:
+      DATABASE_PATH: /data/database.db
+    ports:
+      - "5000:5000"
+    volumes:
+      - lab8-db-data:/data
+    depends_on:
+      db-init:
+        condition: service_completed_successfully
+
+  get-users-api:
+    image: tts09/lab8-talia_semaan:0.0.2-RELEASE
+    build:
+      context: .
+      dockerfile: Dockerfile.get_users
+    environment:
+      DATABASE_PATH: /data/database.db
+    ports:
+      - "3000:3000"
+    volumes:
+      - lab8-db-data:/data
+    depends_on:
+      db-init:
+        condition: service_completed_successfully
+
+volumes:
+  lab8-db-data:
