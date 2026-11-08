@@ -4,6 +4,8 @@ Solo project by Talia Semaan (AUB username: `tts09`), based on the Lab 5 Flask
 user-management API. The project builds two images that share a persistent
 SQLite database:
 
+GitHub repository: https://github.com/taliasemaan/EECE435L-Lab8-Talia-Semaan
+
 | Image | Container port | API |
 | --- | ---: | --- |
 | `tts09/lab8-talia_semaan:0.0.1-RELEASE` | 5000 | Lab 5 user-management API |
